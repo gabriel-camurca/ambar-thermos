@@ -1,0 +1,10 @@
+.content-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.button-bar-container{
+  display: flex;
+  flex-direction: column;
+}
