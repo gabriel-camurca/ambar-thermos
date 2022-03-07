@@ -1,5 +1,26 @@
 .center-container{
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #096dd9;
+}
+
+.center-container h2{
+  color: #fff;
+}
+
+.info-content-container{
+  color: #fff;
+  width: 100%;
+  background-color: #096dd9;
+}
+
+.more-temp-info{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.ant-card-head-title{
+  color: #fff;
 }

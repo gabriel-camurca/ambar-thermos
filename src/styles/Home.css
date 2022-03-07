@@ -2,9 +2,32 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin-top: 15%;
+}
+
+.left-side{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  background-color:#f0f0f0;
 }
 
 .button-bar-container{
+  width: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.button-bar-container label{
+  margin-bottom: 1vh;
+}
+
+.button-bar-container :last-child{
+  width: 100%;
+  margin-top: 3vh;
+}
+
+.display-container{
+  width: 50%;
 }

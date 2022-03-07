@@ -1,6 +1,8 @@
+import * as types from "./types"
+
 export function setNewPlace(place){
   return {
-    type: 'SET_PLACE',
+    type: types.SET_PLACE,
     place
   }
 } 

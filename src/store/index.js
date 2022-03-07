@@ -1,5 +1,7 @@
 import { createStore } from "redux";
 
+import * as types from "../actions/types"
+
 function createPlace(name, acronym, lat, lon){
   return (
     {
@@ -26,7 +28,7 @@ const INITIAL_STATE = {
 }
 
 function reducer(state = INITIAL_STATE, action){
-  if (action.type === 'SET_PLACE'){
+  if (action.type === types.SET_PLACE){
     return {
       ...state,
       current: action.place,

@@ -7,6 +7,8 @@ import * as PlaceActions from '../actions/place.js';
 import '../styles/Home.css'
 import 'antd/dist/antd.css';
 
+import { useNavigate } from "react-router-dom";
+
 import InfoCard from './InfoCard';
 import DisplayInfo from './DisplayInfo';
 
@@ -15,10 +17,16 @@ import { Button } from 'antd/lib/radio';
 
 const Home = (props) => {
 
-  const places = useSelector(state => state.places)
-  const current = useSelector(state => state.current)
+  let navigate = useNavigate();
+
+  const places = useSelector(state => state.places);
+  const current = useSelector(state => state.current);
 
   const dispatch = useDispatch();
+
+  function changeRoute(path){
+    navigate(path);
+  }
 
   function formatUrl(lat, lon){
     return `current?lat=${lat}&lon=${lon}`
@@ -47,17 +55,17 @@ const Home = (props) => {
 
   return (
     <Row className='content-container'>
-      <Col className="button-bar-container">
-          {places.map(element => {
-            return(
-              <Button onClick={() => fetchPlaceInfo(element)} key={element.acronym}>{element.name}</Button>
-            )
-            })}
+      <Col className="left-side">
+        <Col className="button-bar-container">
+            {places.map(element => {
+              return(
+                <Button onClick={() => fetchPlaceInfo(element)} key={element.acronym}>{element.name}</Button>
+              )
+              })}
+              <Button onClick={() => changeRoute("/city")} key={"change"}>Ver cidade</Button>
+        </Col>
       </Col>
-      <Col>
-        <DisplayInfo/>
-      </Col>
-      <Col>
+      <Col className="display-container">
         <InfoCard
           title={current.name}
           current={current.current}
