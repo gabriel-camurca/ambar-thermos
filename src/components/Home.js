@@ -62,7 +62,7 @@ const Home = (props) => {
                 <Button onClick={() => fetchPlaceInfo(element)} key={element.acronym}>{element.name}</Button>
               )
               })}
-              <Button onClick={() => changeRoute("/city")} key={"change"}>Ver cidade</Button>
+              <Button onClick={() => changeRoute("/city")} key={"change"}>Show details</Button>
         </Col>
       </Col>
       <Col className="display-container">
