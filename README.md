@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+## Thermos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# What is this project?
 
-## Available Scripts
+This project aims to create a simple interface for temperature checks.
 
-In the project directory, you can run:
+You are able to choose a city to check it's current, minimum and maximum temperatures.
 
-### `yarn start`
+It serves as an implementation of a challenge for a developer position and has many requiriments; some of those are not present in this version as will be stated in the following section.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# How is this done?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+First off, it should be discussed the technologies being used.
 
-### `yarn test`
+The original intent was for the whole application to use Redux-saga and Firebase, alongside an open API to fetch the data.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+However, for this project, the use of Firebase was causing trouble and there was little time to master Redux-saga, so simple Redux was utilized instead.
 
-### `yarn build`
+So, whenever a button corresponding to the city is pressed, an API call is made to [the FCC Weather API](https://fcc-weather-api.glitch.me/) and the data is fetched and stored.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Then, the data is passed via props to the component responsible for showing the information on the same page.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+It's also possible to click on a button to see the component on another page. This is used to integrate the Redux functionalities of saving information throughout the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Jest was originally meant to be used to test the application, however due to time contraints and problems with the library, it was not possible.
 
-### `yarn eject`
+# How to run?
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+First, install all the dependencies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```npm install```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Then, simply run the application with npm or yarn
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```npm start```
+or
+``` yarn start ```
